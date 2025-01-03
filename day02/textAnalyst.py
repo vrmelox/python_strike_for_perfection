@@ -1,10 +1,9 @@
 import re
 import sys
 import os
-
 def getText():
     if (len(sys.argv) != 2):
-        print("Qu'en un programme, un seul fichier tienne jusqu'à la fin le programme exécuté !")
+        print("Erreur: vous devez fournir un seul document .txt")
         sys.exit()
     else:
         file_path = sys.argv[1]
@@ -13,37 +12,43 @@ def getText():
                 content = text.read()
                 return content
         else:
-            print("Au commencement, le fichier doit existé et du texte il doit contenir.")
+            print("Le document doit contenir du texte")
             sys.exit()
 
+def motFreken(motOften):
+    sorted_motOften = dict(sorted(motOften.items(), key=lambda item : item[1], reverse=True))
+    print(f"Les dix mots les plus utilisés sont :")
+    counter = 0
+    for x in sorted_motOften.items():
+        print(f"{x[0]} : {x[1]}")
+        counter += 1
+        if counter == 10:
+            break
+
 def wordCount():
-    ligne = 0
-    motOften = []
+    motOften = {}
     text = getText()
     ch = 0
     text = re.sub(r'\n', '', text)
     charatersAll = len(text)
-    print(f"Pour votre texte créé, le créateur l'a doté de {charatersAll} caractères avec espace.")
+    print(f"Votre texte contient {charatersAll} caractères avec espace.")
     for x in text :
         if x != " ":
             ch += 1
-    print(f"Le créateur, ayant horreur du vide a doté votre texte de {ch} caractères.")
+    print(f"Votre texte contient {ch} caractères (sans espace).")
     textMots = re.sub(r'[,;.?!:]', '', text.lower())
     mots = textMots.split()
     nombreMots = len(mots)
-    print(f"En {nombreMots} mots, le créateur a formé ce texte.")
+    print(f"Le texte contient {nombreMots} mots")
     phrases = re.split(r'[.?!]', text)
     phrases = [phrase.strip() for phrase in phrases if phrase.strip()]
-    print(f"En {len(phrases)} phrases ce texte fut formé.")
+    print(f"Le texte est constitué de {len(phrases)} phrases.")
     unikmots = set(mots)
-    print(f"Sans redondance, le créateur a utilisé {len(unikmots)} unique pour façonner ce texte.")
+    print(f"Le texte contient {len(unikmots)} mots unique.")
     for x in unikmots:
         number = mots.count(x)
-        motOften.append([x, number])
-        ligne += 1
-    for x in motOften:
-        print(x)
-
+        motOften[x] = number
+    motFreken(motOften)
 wordCount()
 
 

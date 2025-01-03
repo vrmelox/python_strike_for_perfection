@@ -15,8 +15,7 @@ def getText():
             print("Au commencement, le fichier doit existé et du texte il doit contenir.")
             sys.exit()
 def wordCount():
-    ligne = 0
-    motOften = []
+    motOften = {}
     text = getText()
     ch = 0
     text = re.sub(r'\n', '', text)
@@ -37,8 +36,12 @@ def wordCount():
     print(f"Sans redondance, le créateur a utilisé {len(unikmots)} unique pour façonner ce texte.")
     for x in unikmots:
         number = mots.count(x)
-        motOften.append([x, number])
-        ligne += 1
-    for x in motOften:
-        print(x)
+        motOften[x] = number
+    sorted_motOften = dict(sorted(motOften.items(), key=lambda item : item[1]))
+    print(f"Les dix mots les plus utilisés sont :\n")
+    counter = 0
+    while counter < 10 :
+        for x in sorted_motOften.items():
+            print(f"{x[0]} : {x[1]}")
+        counter += 1
 wordCount()
