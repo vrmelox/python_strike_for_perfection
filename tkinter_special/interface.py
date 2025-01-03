@@ -17,7 +17,9 @@ root.config(bg="hotpink")
 
 # lbl = Label(root, text=text).pack()
 
-Entry_name = Entry(root, width=45)
-Entry_name.grid(row=0, column=0)
+Entry_name = Entry(root, width=45, show="*")
+button_aurevoir = Button(root, text="Aurevoir", background="cyan")
+Entry_name.pack()
+button_aurevoir.pack()
 
 root.mainloop()
