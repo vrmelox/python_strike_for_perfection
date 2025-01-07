@@ -1,6 +1,6 @@
-def dedans(result, list, para, value):
-    for x in list:
-        if (list[x][para] == value):
+def dedans(result, pro_lis, para, value):
+    for x in pro_lis.keys():
+        if (pro_lis[x][para] == value):
             result.append(x)
     return result
 
@@ -8,7 +8,7 @@ class Projets:
     def __init__(self):
         self.listprojets = {}
 
-    def addprojects(self, titre, date, status=False, observation="RAS"):
+    def add_project(self, titre, date, status=False, observation="RAS"):
         if (titre not in self.listprojets):
             self.listprojets[titre] = {
                 "titre": titre,
@@ -16,9 +16,11 @@ class Projets:
                 "status": status,
                 "observation": observation
             }
+        else:
+            print("Le projet existe déjà")
         return self.listprojets
 
-    def updateprojets(self, titre, newtitre="", date="", status=False, observation="ras"):
+    def update_projet(self, titre, newtitre="", date="", status=False, observation="ras"):
         if (titre not in self.listprojets):
             print(f"Le projets {titre} n'existe pas dans votre base de données.")
             return
