@@ -56,14 +56,3 @@ class Projets:
         elif (status != ""):
             result = dedans(dico, self.listprojets, "status", status)
             return result
-
-semestre2 = Projets()
-semestre2.addprojects("Piscine paradigms", "07-02-2025", False, "Je l'ai validé avec grade A")
-semestre2.addprojects("Graphical programming", "02-05-2025", False)
-semestre2.addprojects("Project Week", "10-02-2025", True, "Des crédits à gratter")
-semestre2.addprojects("Maths module", "17-04-2025", False, "Tous les crédits obtenus avec Grade A")
-semestre2.addprojects("Deuxième année", "07-05-2025", True, "GPA 3.80")
-print(semestre2.listprojets)
-
-semestre2.updateprojets("Maths module", "Module mathématiques", status=True, observation="Brouhane")
-print(semestre2.listprojets)
