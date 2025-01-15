@@ -1,0 +1,8 @@
+Il choisit le nombre de dés
+Si le nombre de dés est x 
+Il choisit le nombre de face qu'aura les dés
+
+Il simule le lancé :
+    - J'utilise une random generator qui aura toujours entre 1 et le nombre maximale de face
+    - Le random sera généré le nombre de fois qu'il aura choisi de dés
+    
