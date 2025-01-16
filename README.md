@@ -1,10 +1,8 @@
-## Sous-titre
-Maitriser en Python parfaitement en 5 mois
+## Maitriser en Python parfaitement en 5 mois
 
 J'ai décidé de créer cette série d'exercice dans l'optique de maîtriser Python au plus haut point. Un PDF est inclus dans le dossier ; il contient un exercice par jour, des notions les plus basiques aux plus avancées. Si vous parvenez à les faire, vous avancerez sans aucun doute en Python.
 
-## Sous-titre
-LICENCE
+## LICENCE
 
 Vous êtes libre de :
 - Copier, distribuer et transmettre cette œuvre.
