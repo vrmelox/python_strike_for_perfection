@@ -18,9 +18,12 @@ class Repertoire:
         return self.list_contacts
     
     def save(self):
-        return json.dumps(self.list_contacts)
+        elir = json.dumps(self.list_contacts)
+        file = open("contacts.json", "a")
+        file.write(elir)
+        file.close()
 
 Google = Repertoire()
 Google.add_contact("Philippe", "+2290197081988", "amis", "Akandé", "Ekpe, Pk10, Rue des Sciences 7")
-repert = Google.save()
-print(repert)
+Google.add_contact("Amour", "+2290169476050", "amis", "Guidi", "Ekpe, Agbolokoun, Rue des Pêches")
+Google.save()
