@@ -1,5 +1,6 @@
 import random
 
+
 class Jeupendu:
     def __init__(self):
         self.userNumber = None
@@ -11,7 +12,12 @@ class Jeupendu:
     def choixBorne(self):
         while True:
             try:
-                self.xs, self.xe = map(int, input("On joue entre combien et combien (un espace entre les nombres) : ").split())
+                self.xs, self.xe = map(
+                    int,
+                    input(
+                        "On joue entre combien et combien (un espace entre les nombres) : "
+                    ).split(),
+                )
                 if self.xs > self.xe:
                     print("Le premier nombre doit être inférieur ou égal au deuxième.")
                     continue
@@ -23,9 +29,11 @@ class Jeupendu:
         self.hideNumber = random.randint(self.xs, self.xe)
 
     def jouer(self):
-        while(self.userNumber != self.hideNumber):
+        while self.userNumber != self.hideNumber:
             try:
-                self.userNumber = int(input(f"Devinez le nombre entre {self.xs} et {self.xe}: "))
+                self.userNumber = int(
+                    input(f"Devinez le nombre entre {self.xs} et {self.xe}: ")
+                )
                 self.tentative += 1
                 if self.userNumber > self.xe or self.userNumber < self.xs:
                     print(f"Remember: on joue entre {self.xs} et {self.xe}")
@@ -41,6 +49,7 @@ class Jeupendu:
                     break
             except ValueError:
                 print("Merci d'entrer des nombres entiers")
+
 
 pendu = Jeupendu()
 pendu.choixBorne()

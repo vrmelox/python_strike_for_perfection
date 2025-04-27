@@ -8,7 +8,7 @@
 
 # app.exec()
 
-#--------------------------Testint QPushButton ------------
+# --------------------------Testint QPushButton ------------
 # import sys
 # from PyQt6.QtWidgets import QApplication, QPushButton
 
@@ -19,7 +19,7 @@
 
 # app.exec()
 
-#-----------------------testing QMainWindow------------------
+# -----------------------testing QMainWindow------------------
 # import sys
 # from PyQt6.QtWidgets import QApplication, QMainWindow
 
@@ -31,7 +31,7 @@
 # # Start the event loop.
 # app.exec()
 
-#------------------------------testing custom window---------------------
+# ------------------------------testing custom window---------------------
 # import sys
 
 # from PyQt6.QtCore import QSize, Qt
@@ -55,7 +55,7 @@
 # window.show()
 
 # app.exec()
-#--------------------------testing resizable-------------------
+# --------------------------testing resizable-------------------
 # import sys
 
 # from PyQt6.QtCore import QSize, Qt
@@ -86,7 +86,7 @@
 
 # app.exec()
 
-#--------------------testing signals and slots-----------------
+# --------------------testing signals and slots-----------------
 # import sys
 # from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
 
@@ -115,9 +115,10 @@
 
 # app.exec()
 
-#------------------second slot which outputs the checkstate-------------
+# ------------------second slot which outputs the checkstate-------------
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QPushButton
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -137,6 +138,7 @@ class MainWindow(QMainWindow):
 
     def the_button_was_toggled(self, checked):
         print("Checked?", checked)
+
 
 app = QApplication(sys.argv)
 

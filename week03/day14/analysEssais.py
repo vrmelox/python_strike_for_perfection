@@ -1,4 +1,5 @@
 from textblob import TextBlob
+
 # Sample text for sentiment analysis
 text = "I hate Mondays."
 # Create a TextBlob object

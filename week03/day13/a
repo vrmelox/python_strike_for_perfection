@@ -1,0 +1,2 @@
+from sklearn.impute import SimpleImputerimport pandas as pd
+# Assuming df is your DataFrameimputer = SimpleImputer(strategy='mean')df_imputed = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)

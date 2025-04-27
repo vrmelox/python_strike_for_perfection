@@ -1,9 +1,11 @@
 import tkinter as tk
 
+
 def convertir():
     celsius = float(entree_celsius.get())
-    fahrenheit = (celsius * 9/5) + 32
+    fahrenheit = (celsius * 9 / 5) + 32
     label_resultat.config(text=f"{fahrenheit}°F")
+
 
 fenetre = tk.Tk()
 label_celsius = tk.Label(fenetre, text="Celsius:")

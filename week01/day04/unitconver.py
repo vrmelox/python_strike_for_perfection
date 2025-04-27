@@ -58,4 +58,3 @@ unicon.temperature = 25
 
 temp_in_kelvin = unicon.celcius.toKelvin()
 print(f"25 °C en Kelvin : {temp_in_kelvin} K")
-
